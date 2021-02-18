@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-@Component
 public class ActorDAO {
 
     private final List<Actor> actorList;
@@ -22,7 +21,7 @@ public class ActorDAO {
     }
 
     public List<Actor> readActor(String id) throws ActorNotFoundException {
-        if (id == null || id.equals("")) return actorList;
+        if (id.equals("all")) return actorList;
         return Collections.singletonList(findActorById(id));
 
     }
