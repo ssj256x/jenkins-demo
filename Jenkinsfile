@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 git 'https://github.com/ssj256x/jenkins-demo.git'
-                sh './mvnw -Dmaven.test.failure.ignore=true clean package'
+                sh 'mvn -Dmaven.test.failure.ignore=true clean package'
             }
         }
         stage('Test') {
