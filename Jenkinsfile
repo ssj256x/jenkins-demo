@@ -1,10 +1,13 @@
 pipeline {
     agent any
+    tools {
+        maven 'Maven'
+    }
     stages {
         stage('Build') {
             steps {
                 git 'https://github.com/ssj256x/jenkins-demo.git'
-                sh './mvnw.cmd -Dmaven.test.failure.ignore=true clean package'
+                sh 'mvn -Dmaven.test.failure.ignore=true clean package'
             }
         }
         stage('Test') {

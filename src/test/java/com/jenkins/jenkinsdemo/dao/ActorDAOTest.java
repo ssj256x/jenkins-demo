@@ -42,11 +42,6 @@ class ActorDAOTest {
     }
 
     @Test
-    void readActorSuccessEmpty() throws ActorNotFoundException {
-        assertTrue(actorDAO.readActor(null).size() > 1);
-    }
-
-    @Test
     void updateActorTest() throws ActorNotFoundException {
 
         Actor actor5 = new Actor();
